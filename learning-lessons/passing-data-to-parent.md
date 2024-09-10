@@ -28,3 +28,5 @@ Now this is hoe data is passed from child to parent
 function passed from parent will take some parameters when child will call it , it will provide that parameters
 
 if wanna send data from this child to its sibling use useState in parent to do it 
+
+// can pass usestate var as prop
