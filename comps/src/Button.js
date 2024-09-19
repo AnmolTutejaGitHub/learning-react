@@ -20,7 +20,9 @@ function Button({
     warning,
     danger,
     outline,
-    rounded
+    rounded,
+    onClick,
+    ...rest //takes all the remaining properties and assign them to rest //this rest can have out event handler and can pass to our button element no need to maintain handleClick mourseover
 }) {
 
 
@@ -34,7 +36,8 @@ function Button({
 
 
     // px-3 py-1.5 border --> are default
-    const classes = classnames('px-3 py-1.5 border',
+    //rest.className --> any additional className passed by the developer 
+    const classes = classnames(rest.className, 'flex items-center px-3 py-1.5 border',
         {
             'border-blue-500 bg-blue-500 text-white': primary === true,
             'border-gray-900 bg-gray-500 text-white': secondary === true,
@@ -47,7 +50,10 @@ function Button({
             'text-gray-900': outline && secondary
         }
     );
-    return <button className={classes}>{children}</button>;
+    return <button className={classes}
+        //  onClick={onClick} 
+        {...rest} //addititon props will be passed to button element 
+    >{children}</button>;
 }
 
 
