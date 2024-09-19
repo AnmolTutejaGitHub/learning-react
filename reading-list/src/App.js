@@ -1,9 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import BookCreate from './Components/BookCreate';
 import BookList from './Components/BookList';
 import axios from 'axios';
 
+
+import BooksContext from './Context/Books';
+
 function App() {
+
+
+    const { count, incrementCount } = useContext(BooksContext); // will be assigned 0(initial)
+
 
     const [books, setBooks] = useState([]); //arr of obj {id,title}
 
