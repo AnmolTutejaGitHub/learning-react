@@ -7,3 +7,4 @@ https://picsum.photos/300/200  //random images
 json server
 https://www.npmjs.com/package/prop-types
 https://www.npmjs.com/package/classnames
+https://react-icons.github.io/react-icons/

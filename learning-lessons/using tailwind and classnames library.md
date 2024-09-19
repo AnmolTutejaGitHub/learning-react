@@ -8,7 +8,7 @@ Button.js
 // https://www.npmjs.com/package/prop-types 
 // js library for prop validation //so that both primary and secondary can't be true at same time
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import classnames from 'classnames'; 
 
 // const finalClassName = classnames( //key is included if only value is true
 //     {
