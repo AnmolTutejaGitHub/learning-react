@@ -1,30 +1,26 @@
-import { useState } from 'react';
-import Dropdown from './Components/Dropdown';
+import Link from './Components/Link';
+import Route from './Components/Route';
+import AccordianPage from './pages/AccordionPage';
+import DropdownPage from './pages/DropdownPage';
 
 function App() {
-    const [selection, setSelection] = useState(null);
+    return (
+        <div>
+            <Link to="/accordian">Go to accordian</Link>
+            <Link to="/dropdown">Go to dropdown</Link>
+            <div>
 
-    const handleSelect = (option) => {
-        setSelection(option);
-    };
+                {/* // if currpath is accordian then it will render else not  */}
+                <Route path="/accordian">
+                    <AccordianPage />
+                </Route>
 
-    const options = [
-        {
-            label: 'Red',
-            value: 'red'
-        },
-
-        {
-            label: 'Green',
-            value: 'green'
-        },
-
-        {
-            label: 'Blue',
-            value: 'blue'
-        }
-    ]
-    return <Dropdown options={options} value={selection} onChange={handleSelect} />
+                <Route path="/dropdown">
+                    <DropdownPage></DropdownPage>
+                </Route>
+            </div>
+        </div>
+    );
 }
 
 export default App;
