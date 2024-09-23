@@ -1,8 +1,15 @@
-import { useContext } from "react";
-import NavigationContext from "../Context/navigation";
+import classNames from 'classnames';
+// import { useContext } from "react";
+// import NavigationContext from "../Context/navigation";
+import useNavigation from '../hooks/use-navigation';
 
 function Link({ to, children }) {
-    const { navigate } = useContext(NavigationContext);
+    //const { navigate } = useContext(NavigationContext);
+    const { navigate } = useNavigation();
+
+    const classes = classNames('text-blue-500');
+
+
     const handleClick = (event) => {
         if (event.metaKey || event.ctrlKey) return; //command(meta) for mac and ctrl for windowns is pressed while link is clicked it will open in new tab
 
@@ -10,6 +17,6 @@ function Link({ to, children }) {
         navigate(to);
     };
 
-    return <a href={to} onClick={handleClick}>{children}</a>
+    return <a className={classes} href={to} onClick={handleClick}>{children}</a>
 }
 export default Link;
