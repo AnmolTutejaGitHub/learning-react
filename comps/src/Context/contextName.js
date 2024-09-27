@@ -42,4 +42,4 @@ root.render(
 // import { createContext } from "react";
 // import { Provider } from './Context/navigation';
 
-const { state1 } = useContext();
+const { state1 } = createContext(contextName);
