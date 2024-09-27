@@ -51,7 +51,7 @@ function Button({
         }
     );
     return <button className={classes}
-        //  onClick={onClick} 
+        onClick={onClick}
         {...rest} //addititon props will be passed to button element 
     >{children}</button>;
 }
